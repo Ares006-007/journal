@@ -28,3 +28,15 @@ COlORS = {
 }
 
 CARD_COLORS = ["#fcb89a", "#ffe6a7", "#c9e1ff", "#ffd8eb"]
+
+PROMPTS = [
+    "Describe one sensory detail ou remembere from today.",
+    "If todat had a soundtrack, what song that whould play",
+    "What tiny win did you overlook at first?",
+    "Write you need to here tonight.",
+    "Capture the mood outside your window in three lines.",
+]
+
+AFFIRMATIOPNS = [
+    "Your words do no "
+]
