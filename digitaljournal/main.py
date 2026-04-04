@@ -61,3 +61,29 @@ class CloudLayer
 """Renders slow floating cloaud blobs behind the phone cards."""
 
 def __init__(self, canvas: tk.Canvas) -> None:
+    self.canvas = canvas
+    self.clouds.bind("<Configure", self._reset, add="+")
+    self.canvas.after(50, self._reset)
+    self.canvas.after(120, self._animate)
+
+    def _reset(self, event: tk.Event[tk.Canvas]| None = None) -> None:
+        width = event.width if event else self.canvas.winfo_width()
+        height = event.height if event else self.canvas.winfo_height()
+        if width <= 1 or height <= 1:
+            return
+        self.canvas.delete("cloud")
+        self.clouds.clear()
+        cloud_count = max (width // 220, 4)
+        for idx in range (cloud_count):
+            tag = f"cloud_{idx}"
+            size = random.randint(160,260)
+            x = random.randint(-80, width -size)
+            y = random.randint(40, int(height * 0.6))
+            tint = blend_colors(COlORS["gradient_top"], "#ffffff", random.uniform(0.4, 0.75))
+            for bump in range(3):
+                offset = bump * size * 0.4
+                self
+
+        
+        
+
