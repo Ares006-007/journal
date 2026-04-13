@@ -119,6 +119,12 @@ def __init__(self, canvas: tk.Canvas) -> None:
 
                                 def _init_(self, root: tk,TK) -> None:
                                     self.root = root
+                                    self.root.title(APP_TITLE)
+                                    self.root.geometry("1280x720")
+                                    self.root.minsize(1100, 620)
+                                    ENTRY_DIR.mkdir(exist_ok=True)
+
+                                    self
 
 
 
