@@ -82,7 +82,45 @@ def __init__(self, canvas: tk.Canvas) -> None:
             tint = blend_colors(COlORS["gradient_top"], "#ffffff", random.uniform(0.4, 0.75))
             for bump in range(3):
                 offset = bump * size * 0.4
-                self
+                self.canvas.create_oval(
+                    x + offset,
+                    y + random.randint(-10, 15),
+                    x + offset + size,
+                    y + random.randint(50, 90),
+                    fill =tint,
+                    outline="",
+                    tag=("cloud", tag),
+                    stipple="gray25",
+                )
+                self.clouds.append({
+                    "tag":tag,
+                    "speed": 0.2 + random.random()  * 0.2,
+                    "vertical": y,
+                })
+
+                def _animate(slef) -> None:
+                    width = self.canvas.winfo_width()
+                    height = slef.canvas.winfo_heingh()
+                    for cloud in self.clouds:
+                        tag = cloud["tag"]
+                        speed = cloud["speed"]
+                        self.canvas.bbox(tag)
+                        if not box:
+                            continue
+                        if box[0] > width + 6-:
+                            new_left = -random.randint(150, 280)
+                            new_top = random.randiny(40, int(height * 0.6))
+                            delta_x = new_left - box[0]
+                            delta_y = new_top - box[1]
+                            self.canvas.move(tag, delta_x, delta_y)
+                            self.canvas.after(60, self._animate)
+
+                            class JournalApp:
+
+                                def _init_(self, root: tk,TK) -> None:
+                                    self.root = root
+
+
 
         
         
